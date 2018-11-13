@@ -1,4 +1,26 @@
 mixin header()
   header.header-wrap
-    .container
+    .overlay-bg
+    .container.pos-relative
       +b.header
+        +e.menu
+          +e('nav').nav
+            -
+              var items = [
+                'О нас',
+                'преимущества',
+                'каталог',
+                'партнерам',
+                'контакты'
+              ]
+            each item in items
+              +e('a').nav-item(href='#')= item
+          +e('a').menu-call(href='#') Заказать звонок
+        +e.main
+          +e('h1').title Изготовление металлоконструкций
+          +e('h2').title-small любой степени сложности и не только
+          +e.text
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            .d-flex.justify-content-end
+              button.btn
+                span.fz14 Заказать

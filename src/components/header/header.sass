@@ -1,4 +1,48 @@
 @import "../../shared/sass/imports"
 
 .header
+  color: $white
   &-wrap
+    position: relative
+    padding: 20px 0
+    background-image: url('../images/bg/bg-header.png')
+  &__menu
+    +flex-wrap-center-v
+    justify-content: flex-end
+    &-call
+      margin: 10px 15px 10px 100px
+      text-transform: uppercase
+      text-shadow: -6px 4px 12px rgba(0, 0, 0, 0.35)
+      color: transparent
+      text-decoration: none
+      background-image: $gradient
+      background-clip: text
+      -webkit-background-clip: text
+  &__nav
+    +flex-wrap
+    &-item
+      padding: 9px 23px
+      color: inherit
+      font-weight: 500
+      text-transform: uppercase
+      text-decoration: none
+      border: 1px solid transparent
+      border-radius: 18px
+      &:hover
+        border: 1px solid $orange
+        color: $white
+  &__main
+    width: 70%
+  &__title
+    margin-bottom: 0
+    font-size: 63px
+    text-transform: uppercase
+    font-weight: 900
+    &-small
+      margin-top: 0
+      font-size: 33px
+      text-transform: uppercase
+      font-weight: 500
+  &__text
+    width: 88%
+    font-size: 16px

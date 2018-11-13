@@ -1,4 +1,82 @@
 mixin footer()
   footer.footer-wrap
-    .container
+    .overlay-bg
+    .container.pos-relative
       +b.footer
+        +e.items.__items-first.align-items-center
+          +e('span').logo Лого
+          -
+            var items1 = [
+              'assets/images/icons/icon-vk.png',
+              'assets/images/icons/icon-inst.png',
+              'assets/images/icons/icon-fb.png'
+            ]
+          .d-flex.align-items-center.flex-wrap
+            each item in items1
+              +e('a').social(href='')
+                img(src= item alt='')
+        +e.items
+          +e('span').title сервисы
+          -
+            var items2 = [
+              'Отзывы',
+              'Услуги',
+              'Доставка',
+              'Гарантия',
+              'Калькулятор'
+            ]
+          each item in items2
+            +e('a').item(href='#')= item
+        +e.items
+          +e('span').title Каталог
+          -
+            var items2 = [
+              'Винтажные лестницы',
+              'Мебель Loft',
+              'Элементы декора Loft',
+              'Ворота',
+              'Столы, столики и стулья',
+              'Хранение',
+              'Перила и поручни',
+              'Полотенцесушители'
+            ]
+          each item in items2
+            +e('a').item(href='#')= item
+        +e.items
+          +e('span').title Наши предложения
+          -
+            var items2 = [
+              'Новинки',
+              'Популярные товары',
+              'Распродажи и скидки',
+              'Рекомендуемые товары',
+              'Уцененные товары'
+            ]
+          each item in items2
+            +e('a').item(href='#')= item
+        +e.items.fz17
+          .d-flex.align-items-start.mb20
+            +e.icon
+              img(src='assets/images/icons/icon-phone.png' alt='')
+            .d-flex.flex-column
+              span +7 (918) 456 65 65
+          .d-flex.align-items-start.mb20
+            +e.icon
+              img(src='assets/images/icons/icon-mail.png' alt='')
+            .d-flex.flex-column
+              span info@mail.ru
+          .d-flex.align-items-start.mb20
+            +e.icon
+              img(src='assets/images/icons/icon-clock.png' alt='')
+            .d-flex.flex-column
+              span Пн-Пт: с 9:00 до 21:00
+              span Сб: с 9:00 до 18:00
+              span Вс: Выходной
+          .d-flex.align-items-start.mb20
+            +e.icon
+              img(src='assets/images/icons/icon-place.png' alt='')
+            .d-flex.flex-column
+              span 141407, Московская область, г. Химки, Юбилейный пр. 7а
+          .d-flex.align-items-start
+            +e.icon
+            +e('a').map(href='#') посмотреть на карте
