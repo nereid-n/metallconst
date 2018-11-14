@@ -6,9 +6,12 @@
     position: relative
     padding: 20px 0
     background-image: url('../images/bg/bg-header.png')
+    +bg-cover
   &__menu
     +flex-wrap-center-v
     justify-content: flex-end
+    @media (max-width: $lg)
+      justify-content: center
     &-call
       margin: 10px 15px 10px 100px
       text-transform: uppercase
@@ -18,8 +21,10 @@
       background-image: $gradient
       background-clip: text
       -webkit-background-clip: text
+      @media (max-width: $lg)
+        margin: 10px 15px
   &__nav
-    +flex-wrap
+    +flex-wrap-center-h
     &-item
       padding: 9px 23px
       color: inherit
@@ -33,16 +38,66 @@
         color: $white
   &__main
     width: 70%
+    padding: 150px 0 250px
+    @media (max-width: $xl)
+      width: 77%
+    @media (max-width: $lg)
+      width: 100%
+      padding: 100px 0 200px
   &__title
     margin-bottom: 0
     font-size: 63px
     text-transform: uppercase
     font-weight: 900
+    @media (max-width: $lg)
+      font-size: 54px
+    @media (max-width: $md)
+      font-size: 42px
+    @media (max-width: $md)
+      font-size: 34px
+    @media (max-width: 450px)
+      font-size: 28px
+    @media (max-width: 400px)
+      font-size: 24px
     &-small
       margin-top: 0
       font-size: 33px
       text-transform: uppercase
       font-weight: 500
+      @media (max-width: $lg)
+        font-size: 31px
+      @media (max-width: $md)
+        font-size: 28px
+      @media (max-width: $md)
+        font-size: 24px
+      @media (max-width: 450px)
+        font-size: 18px
   &__text
     width: 88%
     font-size: 16px
+  &__btn
+    position: relative
+    z-index: 1
+    min-width: 225px
+  &__img
+    position: absolute
+    z-index: 1
+    bottom: 0
+    left: 50%
+    @media (max-width: 1500px)
+      left: 55%
+      max-width: 50%
+    @media (max-width: $lg)
+      display: none
+  &__down
+    position: absolute
+    bottom: 0
+    left: 30%
+    display: flex
+    align-items: center
+    @media (max-width: $lg)
+      left: 50%
+      transform: translateX(-50%)
+    span
+      margin-left: 15px
+      margin-bottom: 5px

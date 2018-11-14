@@ -1,6 +1,7 @@
 mixin header()
   header.header-wrap
     .overlay-bg
+    img.header__img(src='assets/images/worker.png' alt='')
     .container.pos-relative
       +b.header
         +e.menu
@@ -22,5 +23,8 @@ mixin header()
           +e.text
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
             .d-flex.justify-content-end
-              button.btn
-                span.fz14 Заказать
+              +e('button').btn.btn
+                span.fz18 Заказать
+        +e.down
+          img(src='assets/images/icons/icon-mouse.png' alt='')
+          span Листайте вниз

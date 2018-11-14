@@ -1,6 +1,16 @@
 extends ../components/layout-default/layout-default
+include ../components/index/popular/popular
+include ../components/index/projects/projects
+include ../components/index/calc/calc
+include ../components/index/advantages/advantages
+include ../components/index/answers/answers
 
 block head
     - var pageTitle = 'Index Page';
 
 block content
+  +popular()
+  +projects()
+  +calc()
+  +advantages()
+  +answers()

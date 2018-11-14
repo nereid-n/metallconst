@@ -2,6 +2,7 @@
 
 .btn
   +btn
+  position: relative
   min-width: 193px
   padding: 10px
   color: $main
@@ -9,4 +10,7 @@
   font-weight: 800
   background-image: $gradient
   border-radius: 18px
-  &:after
+  overflow: hidden
+  transition: $transition
+  &:hover
+    box-shadow: 0 0 15px transparentize($orange, 0.5)
