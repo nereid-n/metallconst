@@ -1,1 +1,24 @@
+@import "../../../shared/sass/imports"
+
 .popular
+  $firstWidth: 280px
+  $secondWidth: calc(100% - #{$firstWidth})
+  &-wrap
+    padding: 50px 0
+    background-color: $gray-bg
+  &__title
+    width: $firstWidth
+  &__slider-top
+    &-wrap
+      width: $secondWidth
+    &-item
+      display: flex !important
+      flex-direction: column
+      align-items: center
+    &-title
+      font-size: 10px
+  &__top
+    display: flex
+    align-items: center
+    text-transform: uppercase
+    font-weight: 900

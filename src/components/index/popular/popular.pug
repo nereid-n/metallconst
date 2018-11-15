@@ -2,3 +2,29 @@ mixin popular()
   section.popular-wrap
     .container
       +b.popular
+        +e.top
+          +e.title
+            h2.title-bold Популярные
+            .title-line
+            h3.title-medium категирии товаров
+          +e.slider-top-wrap
+            +e.slider-top
+              -
+                var items1 = [
+                  'Винтажные\n'+
+                  'ворота',
+                  'Мебель\n'+
+                  'Loft',
+                  'Столы\n'+
+                  'и стулья',
+                  'Хранение',
+                  'Винтажные\n'+
+                  'лестницы'
+                ]
+              - for (let j = 0; j < 2; j++)
+                each item, index in items1
+                  - var i = index + 1
+                  +e.slider-top-item
+                    +e.slider-top-img
+                      img(src=`assets/images/icons/popular/icon-popular${i}.png` alt='')
+                    +e('span').slider-top-title= item
