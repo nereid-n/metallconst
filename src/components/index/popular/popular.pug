@@ -4,22 +4,18 @@ mixin popular()
       +b.popular
         +e.top
           +e.title
-            h2.title-bold Популярные
+            h2.title-bold.mt0 Популярные
             .title-line
             h3.title-medium категирии товаров
           +e.slider-top-wrap
             +e.slider-top
               -
                 var items1 = [
-                  'Винтажные\n'+
-                  'ворота',
-                  'Мебель\n'+
-                  'Loft',
-                  'Столы\n'+
-                  'и стулья',
+                  'Винтажные ворота',
+                  'Мебель Loft',
+                  'Столы и стулья',
                   'Хранение',
-                  'Винтажные\n'+
-                  'лестницы'
+                  'Винтажные лестницы'
                 ]
               - for (let j = 0; j < 2; j++)
                 each item, index in items1
@@ -28,3 +24,68 @@ mixin popular()
                     +e.slider-top-img
                       img(src=`assets/images/icons/popular/icon-popular${i}.png` alt='')
                     +e('span').slider-top-title= item
+        +e.bottom
+          - var i = 0
+          +e.nav
+            -
+              var nav = [
+                'Винтажные лестницы',
+                'Мебель Loft',
+                'Элементы декора Loft',
+                'Ворота',
+                'Столы, столики и стулья',
+                'Хранение',
+                'Перила и поручни',
+                'Полотенцесушители'
+              ]
+            each item in nav
+              - var active
+              if (i === 0)
+                - active = 'popular__nav-active'
+              else
+                - active = ''
+              +e.nav-item(class= active)
+                +e.nav-title.__nav-title-js
+                  +e.nav-icon
+                    span
+                    span
+                  +e('span').nav-title-text= item
+                +e.dropdown
+                  -
+                    var dropdown = [
+                      'Обеденные столы',
+                      'Рабочие столы',
+                      'Столики',
+                      'Барные столы и стойки',
+                      'Стулья'
+                    ]
+                  each dropdownItem in dropdown
+                    if (i === 0)
+                      +e(a).dropdown-item.__dropdown-js.__dropdown-active(href=`#popular${i}`)= dropdownItem
+                    else
+                      +e(a).dropdown-item.__dropdown-js(href=`#popular${i}`)= dropdownItem
+                    - i++
+          +e.main
+            - var active
+            - for (var j = 0; j < i; j++)
+              if (j === 0)
+                - active = 'popular__content-active'
+              else
+                - active = ''
+              +e.content(class= active id=`popular${j}`)
+                +e.main-left
+                  +e.bg
+                    img(src='assets/images/popular1.png')
+                  +e.slider-bottom-wrap
+                    +e('span').slider-bottom-title Рабочие столы
+                    +e.slider-bottom
+                      - for (let i = 0; i < 3; i++)
+                        +e.slider-bottom-item
+                          img(src='assets/images/popular2.png')
+                +e.main-right
+                  +e.main-text
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                  .d-flex.flex-column.align-items-center.mt30
+                    button.btn Узнать подробнее
+                    +e('button').btn Заказать

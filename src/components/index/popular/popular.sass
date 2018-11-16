@@ -8,17 +8,212 @@
     background-color: $gray-bg
   &__title
     width: $firstWidth
+    @media (max-width: $md)
+      width: 100%
   &__slider-top
+    width: 700px
+    max-width: calc(100% - 110px)
+    margin: 0 auto
     &-wrap
       width: $secondWidth
+      @media (max-width: $md)
+        width: 100%
     &-item
       display: flex !important
       flex-direction: column
       align-items: center
     &-title
+      max-width: 62px
       font-size: 10px
+      text-align: center
+    &-img
+      $size: 80px
+      height: $size
+      width: $size
+      +flex-center
+    &-prev,
+    &-next
+      top: 50%
+      transform: translateY(-50%)
+    &-prev
+      right: calc(100% + 5px)
+    &-next
+      left: calc(100% + 5px)
   &__top
-    display: flex
-    align-items: center
+    +flex-wrap-center-v
     text-transform: uppercase
     font-weight: 900
+  &__bottom
+    +flex-wrap
+    margin-top: 40px
+  &__nav
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    margin-bottom: 30px
+    padding-right: 20px
+    width: $firstWidth
+    font-size: 15px
+    @media (max-width: $md)
+      width: 100%
+    &-title
+      display: flex
+      align-items: center
+      padding: 4px 0
+      text-transform: uppercase
+      font-weight: 700
+      cursor: pointer
+      transition: $transition
+      &:hover
+        color: $orange
+      &-text
+        margin-left: 5px
+    &-active
+      .popular__dropdown
+        max-height: 200px
+      .popular__nav-icon
+        transform: rotate(-90deg)
+        span
+          background-color: $orange
+    &-icon
+      +flex-center
+      $size: 11px
+      height: $size
+      width: $size
+      span
+        $deg: 40deg
+        display: inline-block
+        height: 1px
+        width: 6px
+        background-color: $main
+        &:first-of-type
+          transform: rotate($deg)
+        &:last-of-type
+          transform: rotate(-$deg)
+          margin-left: -2px
+  &__dropdown
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    max-height: 0
+    box-sizing: content-box
+    padding-left: 50px
+    font-weight: 500
+    transition: all 0.3s linear
+    overflow: hidden
+    &-item
+      padding: 5px 10px
+      color: inherit
+      text-decoration: none
+      border: 1px solid transparent
+      border-radius: 14px
+      transition: color 0.3s ease, border 0.3s ease
+      &:hover
+        color: $orange
+    &-active
+      font-weight: 800
+      border: 1px solid $orange
+  &__main
+    $leftWidth: 54%
+    $rightWidth: 100% - $leftWidth
+    width: $secondWidth
+    @media (max-width: $md)
+      width: 100%
+    &-text
+      $fz: 15px
+      $lh: 1.2
+      $m: $fz * $lh
+      height: $fz * $lh * 12 + $m * 2
+      line-height: $lh
+      font-size: $fz
+      font-weight: 500
+      text-align: center
+      overflow: hidden
+      p
+        margin: $m 0
+    &-left
+      position: relative
+      width: $leftWidth
+      @media (max-width: $xl)
+        width: 100%
+    &-right
+      width: $rightWidth
+      padding-left: 20px
+      @media (max-width: $xl)
+        width: 100%
+  &__content
+    display: flex
+    flex-wrap: wrap
+    max-height: 0
+    transition: opacity 0.3s ease, max-height 0s ease 0.3s
+    opacity: 0
+    overflow: hidden
+    &-active
+      max-height: 2000px
+      transition: opacity 0.3s ease 0.3s, max-height 0s ease 0.3s
+      opacity: 1
+  &__btn
+    +btn
+    margin-top: 10px
+    text-decoration: none
+    color: $main
+    font-size: 14px
+    font-weight: 800
+    text-transform: uppercase
+  &__bg
+    $size: 360px
+    width: $size
+    height: $size
+    max-width: 100%
+    @media (max-width: 450px)
+      $size: 320px
+      width: $size
+      height: $size
+      margin-bottom: 50px
+    img
+      +fit-cover
+  &__slider
+    &-bottom
+      $height: 263px
+      &-wrap
+        position: absolute
+        top: 50px
+        right: 0
+        width: 350px
+        height: $height
+        @media (max-width: 450px)
+          top: 70px
+          width: 300px
+          height: 240px
+        @media (max-width: 400px)
+          top: 100px
+          width: 260px
+          height: 220px
+        @media (max-width: 360px)
+          top: 120px
+          width: 230px
+          height: 200px
+      &-title
+        position: absolute
+        top: 50%
+        max-width: $height
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 28px
+        color: #ffffff
+        text-align: center
+        transform: rotate(-90deg) translateX(-50%) translateY(-100%)
+        transform-origin: 0 0
+        @media (max-width: 400px)
+          top: 0
+          font-size: 24px
+          transform: rotate(-90deg) translateX(-100%) translateY(-100%)
+        @media (max-width: 360px)
+          font-size: 20px
+      &-next
+        bottom: -50px
+        right: 30px
+        @media (max-width: $lg)
+          right: 0
+        @media (max-width: 450px)
+          bottom: -80px

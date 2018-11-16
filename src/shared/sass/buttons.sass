@@ -6,6 +6,7 @@
   min-width: 193px
   padding: 10px
   color: $main
+  font-family: $gilroy
   text-transform: uppercase
   font-weight: 800
   background-image: $gradient
@@ -15,6 +16,13 @@
   &:hover
     box-shadow: 0 0 15px transparentize($orange, 0.5)
   &-slider
+    $size: 48px
     +btn
+    +flex-center
     position: absolute
     z-index: 1
+    width: $size
+    height: $size
+    border-radius: 50%
+  &-next
+    border: 1px solid $orange
