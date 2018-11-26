@@ -1,4 +1,39 @@
 mixin advantages()
   section.advantages-wrap
-    .container
+    .container.pos-relative
+      +b('img')(src='assets/images/advantages1.png' alt='').advantages-image
       +b.advantages
+        +e.left
+          +b('h2').title-bold.mt0 Почему мы?
+          +b('h3').title-medium все очень просто!
+          +b.title-line
+          +b('h2').title-medium.advantages-num свыше
+            +b.title-bold.mt0 1 867
+          +b('h2').title-medium.advantages-text проектов!
+          +e('span') Ваш заказ проработают профессионалы!
+          button.btn уговорили, Заказать!
+        +e.right
+          +e.right__item
+            +e.right__item__image
+              +e('img')(src='assets/images/icons/advantages/icon-advantages1.png' alt='')
+            +e('span') Первоклассная опытная команда специалистов
+          +e.right__item
+            +e.right__item__image
+              +e('img')(src='assets/images/icons/advantages/icon-advantages2.png' alt='')
+            +e('span') Собственное производство всех необходимых конструкций
+          +e.right__item
+            +e.right__item__image
+              +e('img')(src='assets/images/icons/advantages/icon-advantages3.png' alt='')
+            +e('span') Разработка чертежей КМ, КМБ (по запросу)
+          +e.right__item
+            +e.right__item__image
+              +e('img')(src='assets/images/icons/advantages/icon-advantages4.png' alt='')
+            +e('span') Мы используем только качественное сертифицированное сырье и материалы
+          +e.right__item
+            +e.right__item__image
+              +e('img')(src='assets/images/icons/advantages/icon-advantages5.png' alt='')
+            +e('span') Благодаря профессиональному подходу и опытным расчетам наши цены  на 47% ниже рыночных
+          +e.right__item
+            +e.right__item__image
+              +e('img')(src='assets/images/icons/advantages/icon-advantages6.png' alt='')
+            +e('span') Перманентная модернизации технологии производства

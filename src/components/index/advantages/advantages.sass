@@ -1,1 +1,56 @@
+.advantages-wrap
+  padding: 60px 0 75px
+  background-color: #ededed
+  box-shadow: inset 0px 10px 20px -8px rgba(0,0,0, .4)
+
 .advantages
+  display: flex
+  justify-content: space-between
+  &__left
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    width: 215px
+    margin-left: 60px
+    & > span
+      margin-top: 50px
+      margin-bottom: 5px
+      width: 193px
+      font-size: 13px
+      font-weight: 400
+      text-align: center
+  &__right
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 720px
+    &__item
+      display: flex
+      align-items: flex-end
+      width: 350px
+      &__image
+        display: flex
+        justify-content: flex-end
+        min-width: 75px
+        margin-right: 15px
+      & span
+        font-size: 15px
+        font-weight: 500
+
+.advantages-num
+  margin-top: 20px
+  margin-right: 10px
+  text-transform: none
+  & span
+    margin-left: 5px
+    font-weight: 800
+
+.advantages-text
+  margin-top: -3px
+  text-transform: none
+
+.advantages-image
+  position: absolute
+  bottom: -185px
+  right: -280px
+  z-index: 1

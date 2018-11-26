@@ -1,1 +1,111 @@
+@import "../../../shared/sass/imports"
+
 .calc
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: space-between
+  min-height: 320px
+  &__left
+    width: max-content
+    & .title-bold
+      margin-top: 0
+      font-size: 50px
+    & .title-medium
+      font-size: 31px
+    & .title-line
+      margin-left: 166px
+      background-image: linear-gradient(to left, #ededed 0%, #ededed 2%, #ffffff 100%)
+      box-shadow: -6px 4px 12px rgba(0, 0, 0, 0.35)
+  &__right
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+    width: 600px
+    & input
+      width: 285px
+      height: 40px
+      margin-bottom: 20px
+      padding-bottom: 6px
+      padding-top: 6px
+      padding-left: 24px
+      font-size: 12px
+      font-weight: 400
+      font-style: italic
+      color: #0a0807
+      background: transparent
+      border: 1px solid #232526
+      border-radius: 17px
+      &::-webkit-input-placeholder
+        color: #0a0807
+      &::-moz-placeholder
+        color: #0a0807
+      &:-ms-input-placeholder
+        color: #0a0807
+      &:-moz-placeholder
+        color: #0a0807
+    & .select2-container
+      width: 285px !important
+      margin-bottom: 20px
+    & .select2-selection
+      height: 40px
+      background: transparent
+      border: 1px solid #232526
+      border-radius: 17px
+    & .select2-selection__rendered
+      padding-bottom: 6px
+      padding-top: 6px
+      padding-left: 24px !important
+      font-size: 12px
+      font-weight: 400
+      font-style: italic
+      color: #0a0807 !important
+    & .select2-selection__placeholder
+      color: #0a0807 !important
+    & .btn
+      width: 285px
+      height: 40px
+      background-image: linear-gradient(to left, #ededed 0%, #ededed 2%, #ffffff 100%)
+      box-shadow: -6px 4px 12px rgba(0, 0, 0, 0.35)
+
+.checkbox
+  position: absolute
+  z-index: -1
+  opacity: 0
+  margin: 10px 0 0 20px
+
+.checkbox + label
+  position: relative
+  display: flex
+  align-items: center
+  width: 285px
+  padding: 0 0 0 50px
+  font-size: 11px
+  font-weight: 400
+  color: #0a0807
+  cursor: pointer
+
+.checkbox + label:before
+  content: ''
+  position: absolute
+  left: 15px
+  width: 20px
+  height: 19px
+  border-radius: 13px
+  border: 1px solid #0a0807
+  background: transparent
+  transition: .2s
+
+.checkbox + label:after
+  content: ''
+  position: absolute
+  left: 19.3px
+  width: 11px
+  height: 11px
+  border-radius: 10px
+  background: transparent
+  transition: .2s
+
+.checkbox:checked + label:after
+  background: #0a0807

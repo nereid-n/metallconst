@@ -1,4 +1,29 @@
 mixin calc()
-  section.calc-wrap
+  section.calc-wrap.pos-relative
+    +b('img')(src='assets/images/bg/bg-calc.png' alt='').bg-image
+    +b.bg-fon
     .container
       +b.calc
+        +b('img')(src='assets/images/calc1.png' alt='').image-position1
+        +b('img')(src='assets/images/calc2.png' alt='').image-position2
+        +b('img')(src='assets/images/calc3.png' alt='').image-position3
+        +e.left
+          +b('h2').title-bold Всего 3 минуты
+          +b.title-line
+          +b('h2').title-medium на просчет Вашего проекта
+        +e('form').right
+          +b('select').service
+            +e('option')
+            +e('option') 1
+            +e('option') 2
+            +e('option') 3
+          +b('select').material
+            +e('option')
+            +e('option') 1
+            +e('option') 2
+            +e('option') 3
+          +e('input')(type='tel' placeholder='Ваш телефон')
+          +e('input')(type='text' placeholder='Ваш имя')
+          +b('input')(type='checkbox').checkbox#checkbox
+          +b('label')(for="checkbox") Я согласен(-а) на обработку своих персональных данных
+          button(type='submit' disabled='disabled').btn.jsCheck Рассчитать

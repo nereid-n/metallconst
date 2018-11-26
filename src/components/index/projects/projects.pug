@@ -6,5 +6,23 @@ mixin projects()
         h3.title-medium проэкты
         .title-line
         +e.content
-          +e.main
-          +e.sliders
+          +e.content__main
+            +b('img')(src='assets/images/projects1.png' alt='').bg-image
+            +b.project-text
+              +e('h2') Более 1 564
+              +e('h2') реализованных
+              +e('h2') проектов
+              button.btn все работы
+          +e.content__sliders.jsProjectsSlider
+            +b.content-slider
+              +e('img')(src='assets/images/projects2.png' alt='')
+              +e('img')(src='assets/images/projects3.png' alt='')
+              +e('img')(src='assets/images/projects4.png' alt='')
+            +b.content-slider
+              +e('img')(src='assets/images/projects2.png' alt='')
+              +e('img')(src='assets/images/projects3.png' alt='')
+              +e('img')(src='assets/images/projects4.png' alt='')
+            +b.content-slider
+              +e('img')(src='assets/images/projects2.png' alt='')
+              +e('img')(src='assets/images/projects3.png' alt='')
+              +e('img')(src='assets/images/projects4.png' alt='')

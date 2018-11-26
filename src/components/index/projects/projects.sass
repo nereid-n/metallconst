@@ -1,1 +1,52 @@
+@import "../../../shared/sass/imports"
+
 .projects
+  margin-bottom: 70px
+  &__content
+    display: flex
+    justify-content: space-between
+    margin-top: 25px
+    &__main
+      position: relative
+      display: flex
+      align-items: center
+      width: 550px
+      height: 350px
+      margin-right: 15px
+    &__sliders
+      position: relative
+      width: 560px
+      & .projects-prev
+        top: -85px
+        right: 65px
+      & .projects-next
+        top: -85px
+        right: 10px
+
+.project-text
+  position: relative
+  margin-left: 50px
+  & h2
+    margin: 0
+    font-weight: 800
+    font-size: 33px
+    color: #ffffff
+    text-transform: uppercase
+    &:first-child
+      color: $orange
+    &:nth-child(3)
+      margin-bottom: 25px
+
+.content-slider
+  display: flex !important
+  flex-direction: column
+  justify-content: space-between
+  flex-wrap: wrap
+  width: 560px !important
+  height: 350px
+  & img
+    object-fit: cover
+  & img:first-child
+    margin-right: 15px
+  & img:nth-child(2)
+    margin-bottom: 20px

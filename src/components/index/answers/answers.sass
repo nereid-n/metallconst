@@ -1,1 +1,65 @@
+@import "../../../shared/sass/imports"
+
+.answers-wrap
+  margin-top: 65px
+  margin-bottom: 95px
+
 .answers
+  display: flex
+  justify-content: space-between
+  &__left
+    width: 550px
+    & .answers-links
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      margin-top: 55px
+      margin-left: 70px
+      & a
+        padding: 5px 20px
+        font-size: 17px
+        font-weight: 400
+        color: inherit
+        line-height: 1.6
+        text-decoration: none
+        border: 1px solid transparent
+        border-radius: 25px
+        transition: color 0.3s ease, border 0.3s ease
+        &:hover
+          color: $orange
+  &__right
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 525px
+    &__info
+      display: flex
+      align-items: center
+      flex-direction: column
+      margin-bottom: -40px
+      & > span
+        font-size: 15px
+        font-weight: 800
+        text-transform: uppercase
+        &:nth-child(2)
+          margin: 13px 0
+
+.answers-block
+  display: flex
+  flex-wrap: wrap
+
+.answer-content
+  max-height: 0
+  font-size: 15px
+  font-weight: 400
+  transition: opacity 0.3s ease 0.3s, max-height 0s ease 0.3s
+  opacity: 0
+
+.answer-active
+  max-height: 2000px
+  transition: opacity 0.3s ease 0.3s, max-height 0s ease 0.3s
+  opacity: 1
+
+.answer-link-active
+  font-weight: 800 !important
+  border: 1px solid $orange !important
