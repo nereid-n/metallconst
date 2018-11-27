@@ -6,22 +6,6 @@ var Shared = function Shared() {
   _classCallCheck(this, Shared);
 };
 
-$(document).ready(function () {
-  $('.service').select2({
-    placeholder: 'Выберите услугу'
-  });
-  $('.material').select2({
-    placeholder: 'Выберите материал'
-  });
-  $('#checkbox').click(function () {
-    if ($(this).is(':checked') == false) {
-      $('.jsCheck').attr('disabled', 'disabled');
-    } else {
-      $('.jsCheck').removeAttr('disabled');
-    }
-  });
-});
-
 if (document.querySelector('.jsAnswersLinks')) {
   var items = document.querySelectorAll('.jsAnswersLinks');
   for (var i = 0; i < items.length; i++) {
@@ -42,6 +26,22 @@ if (document.querySelector('.jsAnswersLinks')) {
     };
   }
 }
+
+$(document).ready(function () {
+  $('.service').select2({
+    placeholder: 'Выберите услугу'
+  });
+  $('.material').select2({
+    placeholder: 'Выберите материал'
+  });
+  $('#checkbox').click(function () {
+    if ($(this).is(':checked') == false) {
+      $('.jsCheck').attr('disabled', 'disabled');
+    } else {
+      $('.jsCheck').removeAttr('disabled');
+    }
+  });
+});
 
 if ($('.popular__slider-top').length > 0) {
   $('.popular__slider-top').slick({
