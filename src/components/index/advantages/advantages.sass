@@ -1,3 +1,5 @@
+@import "../../../shared/sass/imports"
+
 .advantages-wrap
   padding: 60px 0 75px
   background-color: #ededed
@@ -6,12 +8,22 @@
 .advantages
   display: flex
   justify-content: space-between
+  @media (max-width: $sm)
+    flex-wrap: wrap
   &__left
     display: flex
     flex-direction: column
     align-items: flex-end
-    width: 215px
+    min-width: 215px
+    max-width: 215px
     margin-left: 60px
+    @media (max-width: $xl)
+      margin-left: 0
+      margin-right: 20px
+    @media (max-width: $sm)
+      align-items: center
+      margin: 0 auto
+      text-align: center
     & > span
       margin-top: 50px
       margin-bottom: 5px
@@ -24,10 +36,19 @@
     flex-wrap: wrap
     justify-content: space-between
     width: 720px
+    max-width: 100%
+    margin: 0 -5px
+    @media (max-width: $sm)
+      width: 100%
+      margin-top: 40px
     &__item
       display: flex
       align-items: flex-end
-      width: 350px
+      width: 50%
+      padding: 0 5px 5px
+      @media (max-width: $lg)
+        width: 100%
+        padding-bottom: 20px
       &__image
         display: flex
         justify-content: flex-end
